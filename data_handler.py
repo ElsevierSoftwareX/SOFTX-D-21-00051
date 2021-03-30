@@ -36,7 +36,7 @@ def save_commands(commands_to_call):
                     parameters[parameter.identifier.lower() + '/' + parameter.type] = parameter.value
 
                 try:
-                    responses = sila_device.call_command(feature_id=feature.identifier+'\n', command_id=command.identifier,
+                    responses = sila_device.call_command(feature_id=feature.identifier, command_id=command.identifier,
                                                          parameters=parameters)
                     # TODO experiment
                     # TODO for a device write all points at the end
@@ -85,7 +85,7 @@ def save_properties(properties_to_call):
                 feature = property_info[1]
 
                 try:
-                    responses = sila_device.call_property(feature_id=feature.identifier+'\n',
+                    responses = sila_device.call_property(feature_id=feature.identifier,
                                                           property_id=property.identifier)
                     # TODO experiment
                     # TODO for a device write all points at the end
